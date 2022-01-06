@@ -1,0 +1,3 @@
+/home/dahudohu/Programming!/University/DSA_THIRD_HOMEWORK/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/dahudohu/Programming!/University/DSA_THIRD_HOMEWORK/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/dahudohu/Programming!/University/DSA_THIRD_HOMEWORK/cmake-build-debug/CMakeFiles/DSA_THIRD_HOMEWORK.dir
