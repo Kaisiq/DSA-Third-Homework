@@ -72,14 +72,8 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 build cmake_object_order_depends_target_DSA_THIRD_HOMEWORK: phony || CMakeFiles/DSA_THIRD_HOMEWORK.dir
 
-build CMakeFiles/DSA_THIRD_HOMEWORK.dir/main.cpp.o: CXX_COMPILER__DSA_THIRD_HOMEWORK_Debug /home/dahudohu/Programming!/University/DSA_THIRD_HOMEWORK/main.cpp || cmake_object_order_depends_target_DSA_THIRD_HOMEWORK
-  DEP_FILE = CMakeFiles/DSA_THIRD_HOMEWORK.dir/main.cpp.o.d
-  FLAGS = -g -std=gnu++14
-  OBJECT_DIR = CMakeFiles/DSA_THIRD_HOMEWORK.dir
-  OBJECT_FILE_DIR = CMakeFiles/DSA_THIRD_HOMEWORK.dir
-
-build CMakeFiles/DSA_THIRD_HOMEWORK.dir/tests/tests.cpp.o: CXX_COMPILER__DSA_THIRD_HOMEWORK_Debug /home/dahudohu/Programming!/University/DSA_THIRD_HOMEWORK/tests/tests.cpp || cmake_object_order_depends_target_DSA_THIRD_HOMEWORK
-  DEP_FILE = CMakeFiles/DSA_THIRD_HOMEWORK.dir/tests/tests.cpp.o.d
+build CMakeFiles/DSA_THIRD_HOMEWORK.dir/tests/MyTests.cpp.o: CXX_COMPILER__DSA_THIRD_HOMEWORK_Debug /home/dahudohu/Programming!/University/DSA_THIRD_HOMEWORK/tests/MyTests.cpp || cmake_object_order_depends_target_DSA_THIRD_HOMEWORK
+  DEP_FILE = CMakeFiles/DSA_THIRD_HOMEWORK.dir/tests/MyTests.cpp.o.d
   FLAGS = -g -std=gnu++14
   OBJECT_DIR = CMakeFiles/DSA_THIRD_HOMEWORK.dir
   OBJECT_FILE_DIR = CMakeFiles/DSA_THIRD_HOMEWORK.dir/tests
@@ -92,7 +86,7 @@ build CMakeFiles/DSA_THIRD_HOMEWORK.dir/tests/tests.cpp.o: CXX_COMPILER__DSA_THI
 #############################################
 # Link the executable DSA_THIRD_HOMEWORK
 
-build DSA_THIRD_HOMEWORK: CXX_EXECUTABLE_LINKER__DSA_THIRD_HOMEWORK_Debug CMakeFiles/DSA_THIRD_HOMEWORK.dir/main.cpp.o CMakeFiles/DSA_THIRD_HOMEWORK.dir/tests/tests.cpp.o
+build DSA_THIRD_HOMEWORK: CXX_EXECUTABLE_LINKER__DSA_THIRD_HOMEWORK_Debug CMakeFiles/DSA_THIRD_HOMEWORK.dir/tests/MyTests.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/DSA_THIRD_HOMEWORK.dir
   POST_BUILD = :
