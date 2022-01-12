@@ -17,7 +17,7 @@ struct Word{
     std::string data;
     size_t count;
 
-    ///Default constructor
+    ///C-tor
     Word(std::string Data, size_t Count){
         this->data = Data;
         this->count = Count;

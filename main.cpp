@@ -27,7 +27,7 @@ int main(int argc, char* argv[]) {
 
     std::cout << "Common words: " << result.commonWords.getSize() << " From them " << result.commonWords.countOfUniqueWords() << " are unique.\n";
     std::cout << "Words left from file 1: " << result.uniqueWords[0].getSize() << " From them " << result.uniqueWords[0].countOfUniqueWords() << " are unique.\n";
-    std::cout << "Words left from file 2: " << result.uniqueWords[0].getSize() << " From them " << result.uniqueWords[0].countOfUniqueWords() << " are unique.\n";
+    std::cout << "Words left from file 2: " << result.uniqueWords[1].getSize() << " From them " << result.uniqueWords[1].countOfUniqueWords() << " are unique.\n";
 
     return 0;
 }

@@ -1,6 +1,4 @@
 #pragma once
-#include "interface.h"
-#include <iostream>
 
 
 void WordsMultiset::add(const std::string& word, size_t times){
@@ -17,9 +15,17 @@ void WordsMultiset::add(const std::string& word, size_t times){
     else{
         valueIndexes.push_back(index);
     }
-    hashTable[index]->push_front(new Word(word, times));
-    size += times;
-    uniqueSize++;
+    try {
+        hashTable[index]->push_front(new Word(word, times));
+        size += times;
+        uniqueSize++;
+    }
+    catch(std::bad_alloc& e){
+        std::cerr << e.what();
+        delete hashTable[index]->front();
+        hashTable[index]->pop_front();
+        throw;
+    }
 }
 
 
@@ -34,8 +40,10 @@ void WordsMultiset::remove(const std::string& word, size_t times){
                 iterator.operator*()->count -= times;
                 size -= times;
                 if(iterator.operator*()->count <= 0){
+                    Word* tmp = *iterator;
                     hashTable[index]->remove(iterator.operator*());
                     uniqueSize--;
+                    delete tmp;
                 }
                 return;
             }
@@ -162,17 +170,14 @@ WordsMultiset::WordsMultiset(){
 }
 
 WordsMultiset::~WordsMultiset(){
-    if(size != 0  &&
-        !hashTable[valueIndexes[0]]->empty() &&
-        hashTable[valueIndexes[0]]->begin().operator*() != nullptr) {
-        for (int i = 0; i < arrLen; ++i) {
-            for(auto iterator = hashTable[i]->begin(); iterator != hashTable[i]->end(); iterator++){
-                delete iterator.operator*();
-            }
-            delete hashTable[i];
+    while(!hashTable.empty()){
+        while(!hashTable.back()->empty()){
+            delete hashTable.back()->front();
+            hashTable.back()->pop_front();
         }
+        delete hashTable.back();
+        hashTable.pop_back();
     }
-    hashTable.clear();
 }
 
 WordsMultiset::WordsMultiset(const WordsMultiset& rhs){
@@ -201,7 +206,7 @@ size_t WordsMultiset::getLen() {
 std::vector<Word*> WordsMultiset::getAllWords(size_t index){
     std::vector<Word*> result;
     for(auto iterator = this->hashTable[index]->begin(); iterator != this->hashTable[index]->end(); iterator++){
-        result.push_back(iterator.operator*());
+        result.push_back(new Word(iterator.operator*()->data, iterator.operator*()->count));
     }
     return result;
 }
